@@ -1,0 +1,59 @@
+body {
+    background-color: cadetblue;
+    margin-left: 50px;
+}
+
+#TXT {
+    background: radial-gradient(ellipse at center, #32E527, #439B3E);
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
+    margin: 50px;
+}
+
+#Code {
+    background: radial-gradient(ellipse at center, #32E527, #439B3E);
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
+    margin: 50px;
+}
+
+#ensuite {
+    background: radial-gradient(ellipse at center, #32E527, #439B3E);
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
+    margin: 50px;
+}
+
+h1 {
+    font-size: 50pt;
+    font-family: cursive;
+    font-style: italic;
+    text-align: center;
+    color: red;
+}
+
+h2 {
+    font-size: 30pt;
+    font-family: cursive;
+    font-style: italic;
+    text-align: center;
+    color: red;
+}
+
+h3 {
+    font-size: 20pt;
+    font-family: cursive;
+    font-style: italic;
+    text-align: center;
+    color: red;
+}
+
+p {
+    font-size: 12pt;
+    line-height: 14pt;
+    font-family: fantasy;
+    letter-spacing: 0.2mm;
+    word-spacing: 0.8mm;
+    text-align: center;
+    color: blue;
+}
