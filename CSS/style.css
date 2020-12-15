@@ -1,6 +1,12 @@
 body {background-color:cadetblue;
       margin-left:50px;}
 
+#Code {background-color: aqua;
+       margin:50px;}
+
+#ensuite{background-color: aqua;
+         margin:50px;}
+
 h1 {font-size:50pt;
     font-family:cursive;
     font-style:italic;
