@@ -1,54 +1,74 @@
 body {
-    font-family:serif;
-    background-color:darkslategray;
-    width:90%;
+    font-family: serif;
+    background-image:url(image/mer%20agrandie.jfif);
+    width: auto;
 }
 
 #titre {
-    background-color: aqua;
-    width: auto;
-    float: right;
+    background: radial-gradient(ellipse at center, aqua, blue);
+    width: 50%;
+    margin: auto;
     text-align: center;
-        
+
 }
 
 h1 {
-    color:orange;
+    color: orange;
     font-size: xx-large;
     font-weight: bolder;
-}
-
-h2 {
-    color:darkorange;
-    font-size: large;
-    font-weight: bolder;
+    text-decoration: underline;
 }
 
 #img {
-    background-color: white;
-    width: 10%;
-    margin:auto;
-    float: left;
+    background: radial-gradient(ellipse at center, aqua, blue);
+    width: 50%;
+    margin: auto;
+    text-align: center;
 }
 
-br {
-    color:aqua;
+h2 {
+    color: darkorange;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
 }
+
 
 .container1 {
-    background-color: white;
-    width:70%;
-    margin: auto;
+    background: radial-gradient(ellipse at center, aqua, blue);
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
+    width: 70%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+
 }
 
 .container2 {
-    background-color: white;
-    width:70%;
+    background: radial-gradient(ellipse at center, aqua, blue);
+    width: 70%;
     margin: auto;
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
 }
 
 .container3 {
-    background-color: white;
-    width:70%;
+    background: radial-gradient(ellipse at center, aqua, blue);
+    width: 70%;
     margin: auto;
+    box-shadow: 5px 5px 10px #5D5A5A;
+    border-radius: 10px;
+}
+
+#renvoie {
+    background: radial-gradient(ellipse at center, aqua, blue);
+    margin: auto;
+    width: 10%;
+    text-align: center;
+}
+
+a {
+    color: red
 }
