@@ -1,6 +1,6 @@
 body {
     font-family: serif;
-    background-image:url(image/mer%20agrandie.jfif);
+    background-image: url(image/mer%20agrandie.jfif);
     width: auto;
 }
 
@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    color: orange;
+    color: red;
     font-size: xx-large;
     font-weight: bolder;
     text-decoration: underline;
@@ -27,39 +27,30 @@ h1 {
 }
 
 h2 {
-    color: darkorange;
+    color: red;
     font-size: large;
     font-weight: bolder;
     text-align: center;
 }
 
-
-.container1 {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    box-shadow: 5px 5px 10px #5D5A5A;
-    border-radius: 10px;
-    width: 70%;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-
+p,
+li {
+    color: orange;
 }
 
-.container2 {
+.name {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.container {
     background: radial-gradient(ellipse at center, aqua, blue);
     width: 70%;
     margin: auto;
     box-shadow: 5px 5px 10px #5D5A5A;
     border-radius: 10px;
-}
-
-.container3 {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    width: 70%;
-    margin: auto;
-    box-shadow: 5px 5px 10px #5D5A5A;
-    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #renvoie {
