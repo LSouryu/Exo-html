@@ -63,7 +63,7 @@ p {
 
 #menu {
     list-style-type: none;
-    float:left;
+    float: left;
     position: fixed;
 }
 
@@ -73,7 +73,7 @@ p {
     color: #508768;
     text-decoration: none;
     line-height: 2em;
-    width: auto;
+    width: 130%;
     border: 1px solid blue;
     background-color: #BDD7B5;
     text-align: center;
