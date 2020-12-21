@@ -3,18 +3,15 @@ body {
     background-image: url(image/mer%20agrandie.jfif);
     width: 100%;
 }
-
 #titre {
     background: radial-gradient(ellipse at center, aqua, blue);
     text-align: center;
 
 }
-
 .image {
     background: radial-gradient(ellipse at center, aqua, blue);
     text-align: center;
 }
-
 @media screen and (max-width: 940px) {
     #titre {
         width: 90%;
@@ -34,7 +31,6 @@ body {
         float: left;
     }
 }
-
 @media screen and (min-width: 941px) {
     #titre {
         width: 45%;
@@ -48,32 +44,26 @@ body {
         float: left;
     }
 }
-
 h1 {
     color: red;
     font-size: xx-large;
     font-weight: bolder;
     text-decoration: underline;
 }
-
-
 h2 {
     color: red;
     font-size: large;
     font-weight: bolder;
     text-align: center;
 }
-
 p,
 li {
     color: orange;
 }
-
 .name {
     font-size: large;
     font-weight: bolder;
 }
-
 .btn-primary {
     background: radial-gradient(ellipse at center, aqua, blue);
     width: 50%;
@@ -85,26 +75,25 @@ li {
     border-radius: 10px;
     text-align: center;
 }
-
 .card {
     background: radial-gradient(ellipse at center, aqua, blue);
-    margin: 1vh;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
-
 .alert {
     background: #FF4646;
 }
-
-.btn-close {
-    float: right;
-}
-
 stronk {
     font-size: xx-large;
 }
-
 .btn-success
 .btn-danger {
     width: 50% ;
     margin-bottom: 1%;
+}
+.btn-close {
+    float: right;
 }
