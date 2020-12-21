@@ -5,52 +5,84 @@
 
     <meta charset=”utf-8”>
     <title>Allary Nathan</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script src="bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
 </head>
 
 <body>
-    <div id="img">
+    <!-- img -->
+    <div class="image">
         <a href="image/solo%20leveling%20igris.jpg">
             <img src="image/igris%20adapter.jfif" title=" PLUS GRAND!">
         </a>
     </div>
+    <!-- titre -->
     <div id="titre">
         <h1>Curriculum Vitae</h1>
         <h1>Developpement Web et Web mobile</h1>
         <p class="name">Allary Nathan </p>
     </div>
-    <br>
-    <section class="container">
-        <h2>Mon Experience</h2>
-        <p>mon expérience est principalement accet sur l'électricitée</p>
-    </section>
-    <section class="container">
-        <h2>Mes Compétences</h2>
-        <ul>
-            <li> git et github</li>
-            <li> html5 </li>
-            <li> CSS3 </li>
-        </ul>
-    </section>
-    <section class="container">
-        <h2>Mes formations</h2>
-        <ul>
-            <li>BAC Pro élestrotechnique</li>
-            <li>BTS électrotechnique</li>
-        </ul>
-    </section>
-    <section class="container">
-        <h2>hobbie</h2>
-        <ul>
-            <li>jeux video</li>
-            <li>manga</li>
-            <li>anime</li>
-        </ul>
-
-
-    </section>
+    <!-- colapse 1 -->
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Mon Experience
+        </a>
+    </p>
+    <div class="collapse" id="collapse1">
+        <div class="card card-body">
+            mon expérience est principalement accet sur l'électricitée
+        </div>
+    </div>
+    <!-- colapse 2 -->
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Mes Compétences
+        </a>
+    </p>
+    <div class="collapse" id="collapse2">
+        <div class="card card-body">
+            <ul>
+                <li> git et github</li>
+                <li> html5 </li>
+                <li> CSS3 </li>
+            </ul>
+        </div>
+    </div>
+    <!-- colapse 3 -->
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Mes formations
+        </a>
+    </p>
+    <div class="collapse" id="collapse3">
+        <div class="card card-body">
+            <ul>
+                <li>BAC Pro élestrotechnique</li>
+                <li>BTS électrotechnique</li>
+            </ul>
+        </div>
+    </div>
+    <!-- colapse 4 -->
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapseExample">
+            hobbie
+        </a>
+    </p>
+    <div class="collapse" id="collapse4">
+        <div class="card card-body">
+            <ul>
+                <li>jeux video</li>
+                <li>manga</li>
+                <li>anime</li>
+            </ul>
+        </div>
+    </div>
+    <!-- differente section -->
     <section id="renvoie">
         <a href="#img">retour au titre</a>
     </section>
-</body></html>
+</body>
+
+</html>
