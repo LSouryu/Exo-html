@@ -1,16 +1,52 @@
 body {
     font-family: serif;
     background-image: url(image/mer%20agrandie.jfif);
-    width: auto;
+    width: 100%;
 }
 
 #titre {
     background: radial-gradient(ellipse at center, aqua, blue);
-    width: 45%;
-    margin: 2vh;
     text-align: center;
-    float: right;
 
+}
+
+.image {
+    background: radial-gradient(ellipse at center, aqua, blue);
+    text-align: center;
+}
+
+@media screen and (max-width: 940px) {
+    #titre {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: left;
+    }
+
+    .image {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 941px) {
+    #titre {
+        width: 45%;
+        margin: 2vh;
+        float: right;
+    }
+
+    .image {
+        width: 45%;
+        margin: 2vh;
+        float: left;
+    }
 }
 
 h1 {
@@ -20,13 +56,6 @@ h1 {
     text-decoration: underline;
 }
 
-.image {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    width: 45%;
-    margin: 2vh;
-    text-align: center;
-    float: left;
-}
 
 h2 {
     color: red;
@@ -45,22 +74,35 @@ li {
     font-weight: bolder;
 }
 
-#renvoie {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    margin: auto;
-    width: 10%;
-    text-align: center;
-}
-
-a {
-    color: red
-}
-
 .btn {
     background: radial-gradient(ellipse at center, aqua, blue);
     width: 50%;
-    margin: 3vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
     box-shadow: 5px 5px 10px #5D5A5A;
     border-radius: 10px;
     text-align: center;
+}
+
+.card {
+    background: radial-gradient(ellipse at center, aqua, blue);
+    margin: 1vh;
+}
+
+.alert {
+    background: #FF4646;
+}
+
+.btn-close {
+    float: right;
+}
+
+stronk {
+    font-size: xx-large;
+}
+
+.cookie {
+    font-size: xx-small;
 }
