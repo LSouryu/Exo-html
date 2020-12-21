@@ -74,7 +74,7 @@ li {
     font-weight: bolder;
 }
 
-.btn {
+.btn-primary {
     background: radial-gradient(ellipse at center, aqua, blue);
     width: 50%;
     margin-left: 25%;
@@ -103,6 +103,8 @@ stronk {
     font-size: xx-large;
 }
 
-.cookie {
-    font-size: xx-small;
+.btn-success
+.btn-danger {
+    width: 50% ;
+    margin-bottom: 1%;
 }
