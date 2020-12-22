@@ -1,19 +1,19 @@
 body {
     font-family: serif;
-    background-image: url(image/mer%20agrandie.jfif);
+    background-color: #030667;
     width: 100%;
 }
 
 /* Titre et image */
 
 #titre {
-    background: radial-gradient(ellipse at center, aqua, blue);
+    background: radial-gradient(ellipse at center, #E77E07, #B56305);
     text-align: center;
 
 }
 
 .image {
-    background: radial-gradient(ellipse at center, aqua, blue);
+    background: radial-gradient(ellipse at center, #E77E07, #B56305);
     text-align: center;
 }
 
@@ -60,44 +60,9 @@ h1 {
     text-decoration: underline;
 }
 
-h2 {
-    color: red;
-    font-size: large;
-    font-weight: bolder;
-    text-align: center;
-}
-
-p,
-li {
-    color: orange;
-}
-
 .name {
     font-size: large;
     font-weight: bolder;
-}
-
-/* collapse */
-
-.btn-primary {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom: 1vh;
-    margin-top: 1vh;
-    box-shadow: 5px 5px 10px #5D5A5A;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.card {
-    background: radial-gradient(ellipse at center, aqua, blue);
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
 }
 
 /* cookies */
@@ -117,4 +82,14 @@ li {
 
 stronk {
     font-size: xx-large;
+}
+
+.navbar {
+    background: radial-gradient(ellipse at center, #E77E07, #B56305);
+    width: 100%;
+    float: left;
+}
+
+.nav-item .navbar-brand {
+    color: orange;
 }
