@@ -93,3 +93,8 @@ stronk {
 .nav-item .navbar-brand {
     color: orange;
 }
+
+.nav-item {
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
