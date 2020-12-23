@@ -1,19 +1,19 @@
 body {
     font-family: serif;
-    background-color: #030667;
+    background-color: #09E1F4;
     width: 100%;
 }
 
 /* Titre et image */
 
 #titre {
-    background: radial-gradient(ellipse at center, #E77E07, #B56305);
+    background: radial-gradient(ellipse at center, #0972F4, #0D08F3);
     text-align: center;
 
 }
 
 .image {
-    background: radial-gradient(ellipse at center, #E77E07, #B56305);
+    background: radial-gradient(ellipse at center, #0972F4, #0D08F3);
     text-align: center;
 }
 
@@ -68,8 +68,8 @@ h1 {
 /* cookies */
 
 .btn-success .btn-danger {
-    width: 50%;
-    margin-bottom: 1%;
+    width: 75%;
+    margin: 1vh;
 }
 
 .btn-close {
@@ -85,7 +85,7 @@ stronk {
 }
 
 .navbar {
-    background: radial-gradient(ellipse at center, #E77E07, #B56305);
+    background: radial-gradient(ellipse at center, #0972F4, #0D08F3);
     width: 100%;
     float: left;
 }
