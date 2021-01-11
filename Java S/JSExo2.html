@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+    <meta charset=”utf-8”>
+    <title>Time</title>
+
+</head>
+
+<body>
+
+    <h3>Post-It</h3>
+    <br>
+    <input type="button" value="Cacher" id="Cacher" onclick="Hide()" />
+    <input type="button" value="Afficher" id="Afficher" onclick="unHide()" />
+    <div id="PostIt" style="background-color: yellow; position: absolute; visibility:hidden;"></div>
+    <p id="srv">Merci de bien vouloir me survoler</p>
+
+    <script>
+        var AFF = document.getElementById("PostIt")
+        var srv = document.getElementById("srv")
+
+        function StyleVisible() {
+            AFF.style.visibility = "visible";
+        }
+
+        function Stylehidden() {
+            AFF.style.visibility = "hidden";
+        }
+
+        function unHide() {
+            StyleVisible();
+            AFF.innerHTML = "vous avz cliquer sur le btn afficher";
+        }
+
+        function Hide() {
+            Stylehidden();
+        }
+
+        srv.addEventListener('mouseover', function() {
+            StyleVisible();
+            AFF.innerHTML = "C’est gentil de me survoler...";
+        })
+
+        srv.addEventListener('mouseout', function() {
+            Stylehidden();
+        })
+    </script>
+
+</body></html>

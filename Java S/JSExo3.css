@@ -1,0 +1,15 @@
+h3,div {
+    text-align: center;
+}
+
+h3 {
+    color: red;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: inline;
+}

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+
+    <meta charset=”utf-8”>
+    <title>Time</title>
+    <link rel="stylesheet" type="text/css" href="JSExo3.css" />
+
+</head>
+
+<body>
+
+    <h3>Chrono</h3>
+    <br>
+    <div>
+        <input type="button" value="start" id="start" class="visible" />
+        <input type="button" value="Pause" id="pause" class="invisible" />
+        <input type="button" value="stop" id="stop" class="invisible" />
+        <br>
+        <p id="chrono">
+            <span id="h">00</span><span id="m">00</span><span id="s">00</span>
+        </p>
+        <br>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+
+            var start = document.getElementById("start")
+            var pause = document.getElementById("pause")
+            var stop = document.getElementById("stop")
+
+            var Spanh = document.getElementById("h")
+            var Spanm = document.getElementById("m")
+            var Spans = document.getElementById("s")
+
+            var monTimer
+            var nbSecond = 0;
+
+            (function() {
+                start.paramTps = nbSecond
+                pause.paramTps = nbSecond
+                start.addEventListener('click', startChrono)
+            }())
+
+            function startChrono() {
+                start.removeEventListener('click', startChrono)
+                pause.removeEventListener('click', pauseChrono)
+                stop.removeEventListener('click', startChrono)
+                start.setAttribute('class', 'invisible')
+                pause.setAttribute('class', 'visible')
+                stop.setAttribute('class', 'visible')
+            }
+
+            var startTime = new Date();
+            monTimer = setInterval(function() {
+                // 1- Convertir en secondes :
+                var seconds = Math.round(
+                    (new Date().getTime() - startTime.getTime()) / 1000 +
+                    event.target.paramTps);
+                // e représente l'event déclencheur
+                // e.target représente l'objet déclencheur
+                // ici : bouton start ou bouton pause
+                // (cette prop a été ajoutée aux boutons)
+                // 2- Extraire les heures:
+                var hours = parseInt(seconds / 3600);
+                seconds = seconds % 3600; // secondes restantes
+                // 3- Extraire les minutes:
+                var minutes = parseInt(seconds / 60);
+                seconds = seconds % 60; // secondes restantes
+                // 4- afficher dans le span
+                chronoP.innerHTML = ajouteUnZero(hours) +
+                    ":" + ajouteUnZero(minutes) +
+                    ":" + ajouteUnZero(seconds);
+                // 5- incrémenter le nombre de secondes
+                nbSecond += 1;
+            }, 1000); // fin de function anonyme dans setInterval()
+
+            function ajoutezero(number) {
+                if (number < 10) {
+                    number = "0" + number
+                }
+                return number
+            }
+
+            function pauseChrono() {
+                clearInterval(monTimer)
+                pause.removeEventListener('click',pauseChrono)
+                pause.addEventListener('click',startChrono)
+                pause.paramTps(nbSecond)
+            }
+
+            function stopChrono() {
+                clearInterval(monTimer)
+                pause.removeEventListener('click',pauseChrono)
+                stop.removeEventListener('click',stopChrono)
+                start.addEventListener('click',startChrono)
+            }
+
+        })
+    </script>
+
+</body></html>

@@ -1,0 +1,24 @@
+<html>
+
+<head>
+
+    <meta charset=”utf-8”>
+    <title>Time</title>
+
+</head>
+
+<body>
+    <input type="radio" name="Time" value="Semaine" />Semaine
+    <br>
+    <input type="radio" name="Time" value="Week-end" />Week-end
+    <br>
+    <input type="button" value="Choix" id="text" onclick="afficher()" />
+    <br>
+    <input type="text" name="Choix_" id="text2" />
+    <script>
+        function afficher() {
+            console.log("la fontion est bien affichée")
+            document.getElementById("text2").value = document.querySelector("input[name=Time]:checked").value;
+        }
+    </script>
+</body></html>
