@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset=”utf-8”>
+    <title>passage d’information</title>
+
+</head>
+
+<body>
+    <h1>Première Page</h1>
+    <br>
+
+    <p>
+        Un nombre SVP :
+        <br>
+        <input type="text" name="nombre" id="nombre" />
+    </p>
+
+    <p>
+        Un texte SVP :
+        <br>
+        <input type="text" name="text" id="text" />
+    </p>
+
+    <input type="button" value="envoyer un texte dans une autre page!" id="P2" />
+
+    <script>
+        window.addEventListener('load', function() {
+            var Nbr = document.getElementById('nombre')
+            var Txt = document.getElementById('text')
+            var Btn = document.getElementById('P2')
+
+            Btn.addEventListener('click', function() {
+                var Page2 = "JSExo5_2.html?Nbr=" + Nbr.value + "&Txt=" + Txt.value
+                window.location.href = encodeURI(Page2)
+            })
+        })
+    </script>
+
+</body></html>

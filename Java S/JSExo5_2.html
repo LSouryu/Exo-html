@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset=”utf-8”>
+    <title>passage d’information</title>
+
+</head>
+
+<body>
+
+    <h1>Deuxième Page</h1>
+    <br>
+
+    <p>info reçues :</p>
+    <br>
+
+    <span id="PlaceTxt"></span>
+    <br>
+
+    <span id="PlaceNbr"></span>
+    <br>
+
+    <script>
+        window.addEventListener('load', function() {
+            var RTxt = document.getElementById('PlaceTxt')
+            var RNbr = document.getElementById('PlaceNbr')
+
+            var Page2 = decodeURI(window.location.href)
+            var Split1 = Page2.split('?')
+            var partUrl = Split1[0]
+            var partParam = Split1[1]
+
+            var Split2 = partParam.split('&')
+            var Param1 = Split2[0]
+            var Param2 = Split2[1]
+
+            var SplitP1 = Param1.split('=')
+            var key1 = SplitP1[0]
+            var var1 = SplitP1[1]
+
+            var SplitP2 = Param2.split('=')
+            var key2 = SplitP2[0]
+            var var2 = SplitP2[1]
+
+            RTxt.innerHTML = key2 + " = " + var2
+            RNbr.innerHTML = key1 + " = " + var1
+
+        })
+
+    </script>
+
+</body>
+
+</html>
