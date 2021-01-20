@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ampoule</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="img1" style="display: block">
+     <img src="Close.jfif"/>
+    </div>
+    <div id="img2" style="display: none">
+    <img src="open.jfif"/>
+    </div>
+    
+    <script>
+        $(document).ready(() =>{
+            var img1 = $("#img1").val()
+            var img2 = $("#img2").val()
+            
+            img1.click(function(){
+                $(img1).toggle()
+            })
+            img2.click(function(){
+                $(img2).toggle()
+            })
+        })
+    </script>
+    
+</body>
+
+</html>

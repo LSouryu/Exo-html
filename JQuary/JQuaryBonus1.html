@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th>Prix Total</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+        <form id="form" action="http://google.com">
+            <input type="text" id="Nom" placeholder="Nom du produit">
+            <input type="number" id="Quant" placeholder="Quantitée">
+            <input type="number" id="Prix" placeholder="Prix">
+
+            <button class="btn btn-success" type="submit">Ajouter</button>
+        </form>
+
+
+        <p class=" mt-4 display-4">Le prix est de : <span id="total">0</span> € </p>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+
+            var total = 0
+            var monTicketObj
+
+            if (!localStorage.getItem('ticket')) {
+                monTicketObj = {
+                    'products': []
+                }
+            } else {
+                monTicketObj = JSON.parse(localStorage.getItem('ticket'))
+
+                let x
+                for (x in monTicketObj.products) {
+                    let product = monTicketObj.products[x]
+
+                    var Total = product.Quant * product.Prix
+                    total += Total
+                    $('.table').children('tbody').append(`
+                    <tr>
+                        <td>${product.Nom}</td>
+                        <td>${product.Quant}</td>
+                        <td>${product.Prix}</td>
+                        <td>${sousTotal}</td>
+                        <td><button class="btn btn-sm btn-danger Sup" data-id="${product.id}">supprimer</button></td>
+                    </tr>
+                `)
+                }
+                $('#total').text(total)
+            }
+
+            $('#form').submit(function(Nope) {
+                Nope.preventDefault()
+                console.log("Nope !!!!!")
+
+                var Nom = $("#Nom").val()
+                var Quant = $("#Quant").val()
+                var Prix = $("#Prix").val()
+
+                if (Nom == "" || Quant == "" || Prix == "" || Quant == 0) {
+                    alert("Veuillez remplir les champs")
+                } else {
+                    var Total = Quant * Prix;
+
+                    var id
+                    if (monTicketObj.products.length == 0) {
+                        id = 1
+                    } else {
+                        id = monTicketObj.products[monTicketObj.products.length - 1].id + 1
+                    }
+
+                    $('.table').children('tbody').append(`
+                        <tr>
+                            <td>${Nom}</td>
+                            <td>${Quant}</td>
+                            <td>${Prix}</td>
+                            <td>${Total}</td>
+                            <td><button class="btn btn-sm btn-danger Sup" data-id="${id}">supprimer</button></td>
+                        <tr>`)
+
+                    total += Total
+                    $('#total').text(total)
+                    $('#Nom').val("")
+                    $('#Quant').val("")
+                    $('#Prix').val("")
+
+                    var productObj = {
+                        id: id,
+                        Nom: Nom,
+                        Quant: Quant,
+                        Prix: Prix
+                    }
+                    monTicketObj.products.push(productObj)
+                    localStorage.setItem('ticket', JSON.stringify(monTicketObj))
+
+                }
+
+                $('.deleteMe').unbind('click', deleteProduct)
+                $('.deleteMe').click(deleteProduct)
+
+            })
+
+            $('.deleteMe').click(deleteProduct)
+
+            function deleteProduct() {
+                var button = $(this)
+                var maLigne = button.parent().parent()
+                var idDuProduit = button.attr('data-id')
+                var newTotal = 0
+                let x
+                for (x in monTicketObj.products) {
+                    let product = monTicketObj.products[x]
+                    if (idDuProduit == product.id) {
+                        total -= (product.Quant * product.Prix)
+
+                        monTicketObj.products.splice(x, 1)
+                        localStorage.setItem('ticket', JSON.stringify(monTicketObj))
+                        maLigne.remove()
+                        $('#total').text(total)
+                    }
+
+                }
+
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
