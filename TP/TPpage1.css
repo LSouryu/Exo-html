@@ -1,0 +1,32 @@
+#total {
+    background-color: lightblue;
+    margin: 2%;
+    text-align: center;
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.nav-item {
+    font-size: x-large;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.nav-link {
+    color: red;
+}
+
+#Connection {
+    display: block;
+}
+
+#Inscription {
+    display: none;
+}
+
+.form-control {
+    width: 50%;
+    margin-left: 25%;
+    margin-right;
+    text-align: center;
+}
