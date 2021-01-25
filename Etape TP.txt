@@ -1,0 +1,41 @@
+1. conception du HTML
+	div login
+	div Register
+
+2. conception script navigation
+        login => Register =>login
+
+3. conception Json + localStorage.getItem
+	user (vide)
+
+4. Fonction Register  (Pseudo/Mdp/Conf-Mdp/E-mail)
+	Création d'un Object User push dans Users
+
+5. Fonction save localStorage
+	
+6. Fonction login (Pseudo/Mdp/E-mail)
+
+7. Dom Réseau Social
+	- mur
+	- Post
+	- comentaire
+
+8. Fontion add Post
+	-> Pseudo/Contenue/Img
+	création obj post + push dans posts
+
+9. LocalStorage set Posts
+
+10. Affichage depuis localStorage
+	Pseudo Cible
+	mur d'utilisateur
+
+11.Fonction like 
+	Attention : clic = like , reclic = retrait like 
+	Pseudo/ID Post
+
+12. Fonction Commentaire
+	Pseudo/ID Post/Contenue
+
+13. Fontion Profil Autre User
+	Pseudo cible

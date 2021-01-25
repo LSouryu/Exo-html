@@ -14,6 +14,17 @@
 <body>
     <div id="total">
 
+        <!--
+ _   _            ______            
+| \ | |           | ___ \           
+|  \| | __ ___   _| |_/ / __ _ _ __ 
+| . ` |/ _` \ \ / / ___ \/ _` | '__|
+| |\  | (_| |\ V /| |_/ / (_| | |   
+\_| \_/\__,_| \_/ \____/ \__,_|_|   
+                                    
+                                    
+-->
+
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -21,76 +32,146 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <p id="Inscrip">Inscription</p>
+                <a class="nav-link" id="Inscrip" href="#">
+                    <p>Inscription</p>
                 </a>
             </li>
         </ul>
 
+        <!--
+ _____                             _   _             
+/  __ \                           | | (_)            
+| /  \/ ___  _ __  _ __   ___  ___| |_ _  ___  _ __  
+| |    / _ \| '_ \| '_ \ / _ \/ __| __| |/ _ \| '_ \ 
+| \__/\ (_) | | | | | | |  __/ (__| |_| | (_) | | | |
+ \____/\___/|_| |_|_| |_|\___|\___|\__|_|\___/|_| |_|
+                                                     
+                                                     
+-->
+
         <div id="Connection">
             <h1> Connection </h1>
             <br>
-            <form>
+            <form id="ConnectForm">
                 <p>Pseudo :
-                    <input type="text" id="Pseudo" class="form-control" />
+                    <input type="text" id="Pseudo" class="Form-Connect" />
                 </p>
                 <br>
                 <p>Mdp :
-                    <input type="password" id="mdp" class="form-control" />
+                    <input type="password" id="mdp" class="Form-Connect" />
                 </p>
                 <br>
                 <a href="image/cookies.jpg">
                     <p>en vous connectant a ce site vous accepter ces règles et ces cookies</p>
                 </a>
                 <br>
-                <button class="btn btn-success" id="btn" type="submit">Valider</button>
+                <button class="btn btn-success Btn-Connect" type="submit">Valider</button>
             </form>
             <br>
         </div>
 
+        <!--
+ _____                    _       _   _             
+|_   _|                  (_)     | | (_)            
+  | | _ __  ___  ___ _ __ _ _ __ | |_ _  ___  _ __  
+  | || '_ \/ __|/ __| '__| | '_ \| __| |/ _ \| '_ \ 
+ _| || | | \__ \ (__| |  | | |_) | |_| | (_) | | | |
+ \___/_| |_|___/\___|_|  |_| .__/ \__|_|\___/|_| |_|
+                           | |                      
+                           |_|                      
+-->
+
         <div id="Inscription">
             <h1> Inscription </h1>
             <br>
-            <form>
+            <form id="RegisterForm">
                 <p>Pseudo :
-                    <input type="text" id="Pseudo2" class="form-control" />
+                    <input type="text" id="Pseudo2" class="Form-Register" />
                 </p>
                 <br>
                 <p>E-mail :
-                    <input type="email" id="e_mail2" class="form-control" />
+                    <input type="email" id="e-mail2" class="Form-Register" />
                 </p>
                 <br>
                 <p>Mdp :
-                    <input type="password" id="mdp2" class="form-control" />
+                    <input type="password" id="mdp2" class="Form-Register" />
                 </p>
                 <br>
                 <p>valider le Mdp :
-                    <input type="password" id="vald_mdp2" class="form-control" />
+                    <input type="password" id="vald-mdp2" class="Form-Register" />
                 </p>
                 <br>
                 <a href="image/cookies.jpg">
                     <p>en vous connectant a ce site vous accepter ces règles et ces cookies</p>
                 </a>
                 <br>
-                <button class="btn btn-success" id="btn2" type="submit">Valider</button>
+                <button class="btn btn-success Btn-Register" type="submit">Valider</button>
             </form>
             <br>
         </div>
 
     </div>
 
+    <!--
+ _____           _       _   
+/  ___|         (_)     | |  
+\ `--.  ___ _ __ _ _ __ | |_ 
+ `--. \/ __| '__| | '_ \| __|
+/\__/ / (__| |  | | |_) | |_ 
+\____/ \___|_|  |_| .__/ \__|
+                  | |        
+                  |_|        
+-->
+
     <script>
         $(window).ready(function() {
 
-            $('#Inscrip').click(function() {
+            var locallogin
+            var RegPseudo
+            var RegEmail
+            var RegMdp
+
+            if (!localStorage.getItem("Users")) {
+                locallogin = {
+                    user: []
+                }
+            } else {
+                locallogin = JSON.parse(localStorage.getItem("Users"))
+            }
+
+            $('#Inscrip').click(function(event) {
+                event.preventDefault()
                 $('#Connection').hide()
                 $('#Inscription').show()
             });
 
-            $('#Connect').click(function() {
+            $('#ConnectForm').click(function(event) {
+                event.preventDefault()
                 $('#Connection').show()
                 $('#Inscription').hide()
             });
+
+            $("#RegisterForm").submit(function(event) {
+                event.preventDefault()
+
+                if ($("#Pseudo2").val() == "" || $('#Pseudo2').val().length < 8) {
+                    alert("remplisser correctement le champ pseudo (Plus de 8 character)")
+                } else {
+                    RegPseudo = $("#Pseudo2").val()
+                }
+
+                if ($("#e-mail2").val() == "") {
+                    alert("remplisser correctement le champ E-mail")
+                } else {
+                    RegEmail = $("#e-mail2").val()
+                }
+                
+                if ($("#mdp2").val() == "" || $("#mdp2").val().length < 8 || $("#valid-mdp2").val() != $("#mdp2").val() ) {
+                    alert ("remplisser correctement le champ mdp (Plus de 8 character)")
+                }else {
+                    RegMdp = $("#mdp2").val()
+                }
+            })
         });
     </script>
 </body></html>

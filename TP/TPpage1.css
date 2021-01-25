@@ -24,9 +24,10 @@
     display: none;
 }
 
-.form-control {
+.Form-Connect,
+.Form-Register {
     width: 50%;
     margin-left: 25%;
-    margin-right;
+    margin-right: 25%;
     text-align: center;
 }
