@@ -53,8 +53,8 @@
             <h1> Connection </h1>
             <br>
             <form id="ConnectForm">
-                <p>Pseudo :
-                    <input type="text" id="Pseudo" class="Form-Connect" />
+                <p>Pseudo ou E-mail :
+                    <input type="text" id="pseudo" class="Form-Connect" />
                 </p>
                 <br>
                 <p>Mdp :
@@ -86,7 +86,7 @@
             <br>
             <form id="RegisterForm">
                 <p>Pseudo :
-                    <input type="text" id="Pseudo2" class="Form-Register" />
+                    <input type="text" id="pseudo2" class="Form-Register" />
                 </p>
                 <br>
                 <p>E-mail :
@@ -111,6 +111,27 @@
         </div>
 
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <!--
  _____           _       _   
@@ -133,7 +154,7 @@
 
             if (!localStorage.getItem("Users")) {
                 locallogin = {
-                    user: []
+                    users: []
                 }
             } else {
                 locallogin = JSON.parse(localStorage.getItem("Users"))
@@ -151,25 +172,100 @@
                 $('#Inscription').hide()
             });
 
+            /*
+                        
+            ______           _     _            
+            | ___ \         (_)   | |           
+            | |_/ /___  __ _ _ ___| |_ ___ _ __ 
+            |    // _ \/ _` | / __| __/ _ \ '__|
+            | |\ \  __/ (_| | \__ \ ||  __/ |   
+            \_| \_\___|\__, |_|___/\__\___|_|   
+                        __/ |                   
+                       |___/                    
+            */
+
             $("#RegisterForm").submit(function(event) {
                 event.preventDefault()
 
-                if ($("#Pseudo2").val() == "" || $('#Pseudo2').val().length < 8) {
+                if ($("#pseudo2").val() == "" || $('#pseudo2').val().length < 8) {
                     alert("remplisser correctement le champ pseudo (Plus de 8 character)")
-                } else {
-                    RegPseudo = $("#Pseudo2").val()
-                }
-
-                if ($("#e-mail2").val() == "") {
+                } else if ($("#e-mail2").val() == "") {
                     alert("remplisser correctement le champ E-mail")
+                } else if (($("#mdp2").val() == "" || $("#mdp2").val().length < 8) && $("#valid-mdp2").val() == $("#mdp2").val()) {
+                    alert("remplisser correctement le champ mdp (Plus de 8 character)")
                 } else {
-                    RegEmail = $("#e-mail2").val()
+                    let PseudoExist = false
+                    let EmailExist = false
+
+                    let x
+                    for (x in locallogin.users) {
+                        var actualuser = locallogin.users[x]
+                        if (actualuser.pseudo == $("#pseudo2").val()) {
+                            PseudoExist = true
+                            alert("Pseudo already exist")
+                            break;
+                        }
+                        if (actualuser.email == $("#e-mail2").val()) {
+                            EmailExist = true
+                            alert("email already exist")
+                            break;
+                        }
+                    }
+
+                    if (PseudoExist == false && EmailExist == false) {
+                        RegPseudo = $("#pseudo2").val()
+                        RegEmail = $("#e-mail2").val()
+                        RegMdp = $("#mdp2").val()
+
+                        var NewUser = {
+                            pseudo: RegPseudo,
+                            email: RegEmail,
+                            mdp: RegMdp,
+                        }
+
+                        locallogin.users.push(NewUser)
+                        localStorage.setItem("Users", JSON.stringify(locallogin))
+                    }
                 }
-                
-                if ($("#mdp2").val() == "" || $("#mdp2").val().length < 8 || $("#valid-mdp2").val() != $("#mdp2").val() ) {
-                    alert ("remplisser correctement le champ mdp (Plus de 8 character)")
-                }else {
-                    RegMdp = $("#mdp2").val()
+            })
+            /*            
+                        
+             _             _       
+            | |           (_)      
+            | | ___   __ _ _ _ __  
+            | |/ _ \ / _` | | '_ \ 
+            | | (_) | (_| | | | | |
+            |_|\___/ \__, |_|_| |_|
+                      __/ |        
+                     |___/         
+            */
+
+            $("#ConnectForm").submit(function(event) {
+                    event.preventDefault()
+
+                    let login = false
+
+                    let x
+                    for (x in [] users) {
+                        let actualUser = users[x]
+                        if (users.email == $("#pseudo").val()) {
+                            if (users.mdp == $("#mdp").val()) {
+                                login = true
+                                break;
+                            }
+                        }
+                        if (users.pseudo == $("#pseudo").val()) {
+                            if (users.mdp == $("#mdp").val()) {
+                                login = true
+                                break;
+                            }
+                        }
+                    }
+                    if (login == true) {
+                        alert("bienvenue")
+                    } else {
+                        alert("mdp ou pseudo incorect")
+                    }
                 }
             })
         });
